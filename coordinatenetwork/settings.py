@@ -19,7 +19,7 @@ SESSION_CONFIG_DEFAULTS = dict(
     real_world_currency_per_point=1.00, participation_fee=0.00, doc=""
 )
 
-PARTICIPANT_FIELDS = ['auth_success', 'inviter']
+PARTICIPANT_FIELDS = ['auth_success', 'inviter', 'inviter_dec', 'recipient','recipient_dec']
 SESSION_FIELDS = []
 
 # ISO-639 code
