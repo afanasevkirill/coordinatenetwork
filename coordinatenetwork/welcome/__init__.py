@@ -4,7 +4,7 @@ import requests
 import os
 
 class C(BaseConstants):
-    NAME_IN_URL = 'survey'
+    NAME_IN_URL = 'welcome'
     PLAYERS_PER_GROUP = None
     NUM_ROUNDS = 5
 

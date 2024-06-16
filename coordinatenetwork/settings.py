@@ -5,7 +5,7 @@ SESSION_CONFIGS = [
     dict(
         name='net_experiment',
         display_name="Network experiment",
-        app_sequence=['welcome'],
+        app_sequence=['survey'],
         num_demo_participants=1,
     ),
 ]
