@@ -30,10 +30,8 @@ class Final(Page):
 
     def vars_for_template(self):
         payoff = self.participant.payoff_plus_participation_fee()
-
-        p = self.group.get_player_by_id(1)
         try:
-            link = p.participant.recipient
+            link = self.participant.recipient
         except:
             link = "Ошибка! Напишите организатору"
         friends_participated = 0
