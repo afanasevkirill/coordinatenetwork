@@ -29,6 +29,8 @@ class Final(Page):
     form_fields = []
 
     def vars_for_template(self):
+        payoff = self.participant.payoff_plus_participation_fee()
+
         p = self.group.get_player_by_id(1)
         try:
             link = p.participant.recipient
@@ -45,7 +47,8 @@ class Final(Page):
 
         return dict(
             link=link,
-            friends_participated=friends_participated
+            friends_participated=friends_participated,
+            payoff=payoff
         )
 
 
