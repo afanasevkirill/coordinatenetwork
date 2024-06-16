@@ -91,12 +91,6 @@ class Rating2(Page):
     form_model = "player"
     form_fields = ['eval_punish_B', 'eval_not_punish_B', 'eval_punish_A', 'eval_not_punish_A']
 
-    def is_displayed(self):
-        monitor = self.session.config["monitor"]  # eval(self.player.config).message_is_needed and
-        return (
-            monitor
-        )
-
 
 class ResultsWaitPage(WaitPage):
     def after_all_players_arrive(self):
