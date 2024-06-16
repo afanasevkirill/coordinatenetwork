@@ -96,7 +96,7 @@ class ResultsWaitPage(WaitPage):
 class Results(Page):
     def vars_for_template(self):
         decision_to_pay = decisions[self.group.random_decision]
-        persons_answer = eval_options(eval(f"self.player.{self.group.random_decision}"))
+        persons_answer = eval_options(eval(f"self.{self.group.random_decision}"))
         if self.player.payoff == 25:
             result = f'''Ваш ответ: "{persons_answer}" совпал с модальным.'''
         else:
