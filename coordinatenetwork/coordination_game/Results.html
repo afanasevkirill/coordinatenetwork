@@ -1,0 +1,25 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Результат
+{% endblock %}
+
+{% block content %}
+
+<p>
+Для определения выигрыша случайным образом было выбрано следующее действие:
+</p>
+<p>
+"{{ decision_to_pay }}"
+</p>
+<p>
+{{ result }}
+</p>
+<p>
+    Ваш выигрыш составил: {{ player.payoff }}
+</p>
+    {% next_button %}
+{% endblock %}
+
+
