@@ -82,10 +82,6 @@ class Player(BasePlayer):
 class Rating1(Page):
     form_model = "player"
     form_fields = ['eval_not_demand','eval_demand', 'eval_pay', 'eval_not_pay']
-    def vars_for_template(self):
-        return dict(
-            monitor = self.session.config["monitor"]
-        )
 
 class Rating2(Page):
     form_model = "player"
