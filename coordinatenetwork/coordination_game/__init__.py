@@ -44,8 +44,7 @@ class Player(BasePlayer):
     def set_payoff(self):
         self.random_decision = random.choice(['eval_not_demand', 'eval_demand', 'eval_pay', 'eval_not_pay'])
         list_of_decisions = eval(f'[p.field_maybe_none("{self.random_decision}") for p in self.subsession.get_players()]')
-        print(list_of_decisions)
-        mode_answers_list = multimode(list_of_decisions)
+        mode_answers_list = multimode([x for x in list_of_decisions if x is not None])
         self.mode_answer = ', '.join([eval_options(item) for item in mode_answers_list])
         for p in self.subsession.get_players():
             if eval(f'p.{self.random_decision}') in mode_answers_list:
