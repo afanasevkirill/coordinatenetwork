@@ -46,11 +46,10 @@ class Player(BasePlayer):
         list_of_decisions = eval(f'[p.field_maybe_none("{self.random_decision}") for p in self.subsession.get_players()]')
         mode_answers_list = multimode([x for x in list_of_decisions if x is not None])
         self.mode_answer = ', '.join([eval_options(item) for item in mode_answers_list])
-        for p in self.subsession.get_players():
-            if eval(f'p.{self.random_decision}') in mode_answers_list:
-                p.payoff = C.PRIZE
-            else:
-                p.payoff = 100
+        if eval(f'self.{self.random_decision}') in mode_answers_list:
+            self.payoff = C.PRIZE
+        else:
+            self.payoff = cu(100)
 
     def make_field(label):
         return models.IntegerField(
