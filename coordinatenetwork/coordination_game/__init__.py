@@ -97,7 +97,7 @@ class Results(Page):
     def vars_for_template(self):
         decision_to_pay = decisions[self.group.random_decision]
         persons_answer = eval_options(eval(f"self.{self.group.random_decision}"))
-        if self.player.payoff == 25:
+        if self.payoff == 25:
             result = f'''Ваш ответ: "{persons_answer}" совпал с модальным.'''
         else:
             result = f'''Ваш ответ: "{persons_answer}" не совпал с модальным. Модальный ответ: {self.group.mode_answer}'''
