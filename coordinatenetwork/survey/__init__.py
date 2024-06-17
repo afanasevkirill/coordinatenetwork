@@ -193,13 +193,24 @@ class Player(BasePlayer):
 #                              label='Как часто Вы посещаете религиозную службу? (не считая свадеб, похорон, крещений)',
 #                              widget=widgets.RadioSelect)
 
+    phone = models.StringField(
+        label='Номер телефона')
+    name = models.StringField(
+        label='Имя и первая буква фамилии')
+    bank = models.StringField(
+        label='Название банка, на счёт в котором перечислить выигрыш')
+
 
 
 class Survey(Page):
     form_model = 'player'
     form_fields = ['age', 'gender', 'birth', 'childhood', 'work_field', 'study_field', 'education', 'risk', 'income', 'life_satisfaction', 'trust', 'freedom_of_choice', 'feedback']
 
+class Payment(Page):
+    form_model = 'player'
+    form_fields = ['phone', 'name', 'bank']
 
-page_sequence = [Survey]
+
+page_sequence = [Survey, Payment]
 
 
