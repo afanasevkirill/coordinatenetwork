@@ -96,7 +96,7 @@ class Introduction(Page):
 
 class Rating1(Page):
     form_model = "player"
-    form_fields = ['engagement_1','engagement_2', 'ee_1', 'ee_2', 'ident_1', 'ident_2', 'ident_3', 'nature', 'pnb_1', 'pnb_2']
+    form_fields = ['city', 'engagement_1','engagement_2', 'ee_1', 'ee_2', 'ident_1', 'ident_2', 'ident_3', 'nature', 'pnb_1', 'pnb_2']
 
 class Rating2(Page):
     form_model = "player"
